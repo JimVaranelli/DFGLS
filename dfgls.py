@@ -172,7 +172,7 @@ def main():
             res = dfgls(mdl, regression='ct')
             _print_res(res=res, st=st)
             assert_almost_equal(res[0], -2.33832, decimal=5)
-            assert_almost_equal(res[1], 0.01866, decimal=5)
+            assert_almost_equal(res[1], 0.15990, decimal=5)
             assert_equal(res[2], 17)
         elif file == 'DBAA.csv':
             res = dfgls(mdl)
@@ -184,7 +184,7 @@ def main():
             res = dfgls(mdl, regression='ct', maxlag=8, autolag='t-stat')
             _print_res(res=res, st=st)
             assert_almost_equal(res[0], -4.43873, decimal=5)
-            assert_almost_equal(res[1], 0.00001, decimal=5)
+            assert_almost_equal(res[1], 0.00025, decimal=5)
             assert_equal(res[2], 8)
         elif file == 'SP500.csv':
             res = dfgls(mdl)
@@ -196,7 +196,7 @@ def main():
             res = dfgls(mdl, regression='ct')
             _print_res(res=res, st=st)
             assert_almost_equal(res[0], -2.02347, decimal=3)
-            assert_almost_equal(res[1], 0.04118, decimal=3)
+            assert_almost_equal(res[1], 0.27638, decimal=3)
             assert_equal(res[2], 5)
         elif file == 'DSP500.csv':
             res = dfgls(mdl)
@@ -220,7 +220,7 @@ def main():
             res = dfgls(mdl, regression='ct', autolag='t-stat')
             _print_res(res=res, st=st)
             assert_almost_equal(res[0], -2.98420, decimal=5)
-            assert_almost_equal(res[1], 0.00280, decimal=5)
+            assert_almost_equal(res[1], 0.03639, decimal=5)
             assert_equal(res[2], 12)
         elif file == 'DUN.csv':
             res = dfgls(mdl, maxlag=8, autolag='t-stat')
@@ -232,7 +232,7 @@ def main():
             res = dfgls(mdl, regression='ct')
             _print_res(res=res, st=st)
             assert_almost_equal(res[0], -2.67000, decimal=5)
-            assert_almost_equal(res[1], 0.00737, decimal=5)
+            assert_almost_equal(res[1], 0.07938, decimal=5)
             assert_equal(res[2], 14)
 
 
