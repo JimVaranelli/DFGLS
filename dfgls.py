@@ -130,6 +130,11 @@ def dfgls(x, regression='c', maxlag=None, autolag='AIC'):
     # run ADF on demeaned/detrended series
     # setting regression type to 'nc'
     res = adfuller(dtx, regression='nc', maxlag=maxlag, autolag=autolag)
+    # need to correct the critical/p-values for 'ct'
+    if regression == 'ct':
+        cvs = mackinnoncrit(N=1, regression='c', nobs=len(dtx))
+        res = [res[0], mackinnonp(res[0], regression='c', N=1), res[2], res[3],
+               {"1%": cvs[0], "5%": cvs[1], "10%": cvs[2]}]
     return res
 
 
